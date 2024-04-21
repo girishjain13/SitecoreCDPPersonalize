@@ -48,7 +48,7 @@ _boxeverq.push(function() {
         currency: "USD",
         page: "homepage",
       pos: "SpinBurger",
-        email: email
+        email: 'email'
 
     };
 
