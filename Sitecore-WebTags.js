@@ -61,3 +61,31 @@ _boxeverq.push(function() {
     Boxever.eventCreate(identityEvent, function(data){},"json");
 });
 }
+
+function sendAddEvent(productType, itemID, productName, productPrice, productID, productCurrency) {
+  _boxeverq.push(function() {
+  var addEvent = {
+    browser_id: Boxever.getID(),
+    channel: "WEB",
+    type: "ADD",
+    language: "EN",
+    currency: "USD",
+    page: "homepage",
+    pos: "SpinBurger",
+    product: {
+      type: productType,
+      item_id: itemID,
+      name: productName,
+      orderedAt: new Date().toISOString(),
+      quantity: 1,
+      price: productPrice,
+      product_id: productID,
+      currency: productCurrency
+    }
+  };
+      Boxever.eventCreate(addEvent, function(data){},"json");
+});
+}
+
+
+    
