@@ -40,7 +40,7 @@ function login(email) {
   
 _boxeverq.push(function() {
     // Create a "VIEW" event object
-    var identutyEvent = {
+    var identityEvent = {
         browser_id: Boxever.getID(),
         channel: "WEB",
         type: "IDENTITY",
@@ -53,6 +53,6 @@ _boxeverq.push(function() {
     };
 
     // Send the event data to the server
-    Boxever.eventCreate(viewEvent, function(data){},"json");
+    Boxever.eventCreate(identutyEvent, function(data){},"json");
 });
 }
