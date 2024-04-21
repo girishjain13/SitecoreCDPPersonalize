@@ -88,7 +88,7 @@ function sendAddEvent(productType, itemID, productName, productPrice, productid,
 });
 }
 
-function sendConfirmEvent() {
+function sendConfirmEvent(confirmedProducts) {
  
   _boxeverq.push(function() {
   var confirmEvent = {
@@ -115,7 +115,7 @@ function sentCheckoutEvent() {
   var checkoutEvent = {
     browser_id: Boxever.getID(),
     channel: "WEB",
-    type: "CONFIRM",
+    type: "CHECKOUT",
     language: "EN",
     currency: "USD",
     page: "checkout",
