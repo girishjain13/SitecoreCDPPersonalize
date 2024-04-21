@@ -84,8 +84,49 @@ function sendAddEvent(productType, itemID, productName, productPrice, productid,
     }
   };
     Boxever.eventCreate(addEvent, function (data) { }, "json");
-    console.log("event called");
+    
 });
+}
+
+function sendConfirmEvent() {
+ 
+  _boxeverq.push(function() {
+  var confirmEvent = {
+    browser_id: Boxever.getID(),
+    channel: "WEB",
+    type: "CONFIRM",
+    language: "EN",
+    currency: "USD",
+    page: "checkout",
+    pos: "SpinBurger",
+    product: [{
+      
+      item_id:"ITEM_1"
+    }]
+  };
+    Boxever.eventCreate(ConfirmEvent, function (data) { }, "json");
+    
+});
+  
+}
+function sentCheckoutEvent() {
+ 
+  _boxeverq.push(function() {
+  var checkoutEvent = {
+    browser_id: Boxever.getID(),
+    channel: "WEB",
+    type: "CONFIRM",
+    language: "EN",
+    currency: "USD",
+    page: "checkout",
+    pos: "SpinBurger",
+    refernce_id: "ORDER_111",
+   status: "PURCHASED"
+  };
+    Boxever.eventCreate(checkoutEvent, function (data) { }, "json");
+    
+});
+  
 }
 
 

@@ -138,5 +138,7 @@ function Checkout() {
 
     Remove(productElement)
   }
+  sendConfirmEvent()
+  sentCheckoutEvent()
   
 }
