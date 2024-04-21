@@ -62,7 +62,7 @@ _boxeverq.push(function() {
 });
 }
 
-function sendAddEvent(productType, itemID, productName, productPrice, productID, productCurrency) {
+function sendAddEvent(productType, itemID, productName, productPrice, productid, productCurrency) {
   _boxeverq.push(function() {
   var addEvent = {
     browser_id: Boxever.getID(),
@@ -79,7 +79,7 @@ function sendAddEvent(productType, itemID, productName, productPrice, productID,
       orderedAt: new Date().toISOString(),
       quantity: 1,
       price: productPrice,
-      product_id: productID,
+      product_id: productid,
       currencyCode: productCurrency
     }
   };

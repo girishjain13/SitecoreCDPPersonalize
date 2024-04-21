@@ -79,7 +79,7 @@ function Add(productid,buttonId) {
 
   
 
-  sendAddEvent(productType,item_id,productName,productPrice,productCurrency)
+  sendAddEvent(productType,item_id,productName,productPrice,productid,productCurrency)
   
 }
 
