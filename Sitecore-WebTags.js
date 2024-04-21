@@ -34,3 +34,25 @@ _boxeverq.push(function() {
     // Send the event data to the server
     Boxever.eventCreate(viewEvent, function(data){},"json");
 });
+
+function login(email) {
+  
+  
+_boxeverq.push(function() {
+    // Create a "VIEW" event object
+    var identutyEvent = {
+        browser_id: Boxever.getID(),
+        channel: "WEB",
+        type: "IDENTITY",
+        language: "EN",
+        currency: "USD",
+        page: "homepage",
+      pos: "SpinBurger",
+        email: email
+
+    };
+
+    // Send the event data to the server
+    Boxever.eventCreate(viewEvent, function(data){},"json");
+});
+}
