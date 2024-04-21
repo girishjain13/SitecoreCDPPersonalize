@@ -104,7 +104,7 @@ function sendConfirmEvent(confirmedProducts) {
       item_id:"ITEM_1"
     }]
   };
-    Boxever.eventCreate(ConfirmEvent, function (data) { }, "json");
+    Boxever.eventCreate(confirmEvent, function (data) { }, "json");
     
 });
   
@@ -123,7 +123,7 @@ function sentCheckoutEvent() {
     refernce_id: "ORDER_111",
    status: "PURCHASED"
   };
-    Boxever.eventCreate(checkoutEvent, function (data) { }, "json");
+    Boxever.eventCreate(checkoutEvent, function(data) {}, "json");
     
 });
   
