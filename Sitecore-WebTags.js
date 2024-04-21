@@ -53,6 +53,6 @@ _boxeverq.push(function() {
     };
 
     // Send the event data to the server
-    Boxever.eventCreate(identutyEvent, function(data){},"json");
+    Boxever.eventCreate(identityEvent, function(data){},"json");
 });
 }
