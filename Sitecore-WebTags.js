@@ -83,7 +83,8 @@ function sendAddEvent(productType, itemID, productName, productPrice, productID,
       currencyCode: productCurrency
     }
   };
-      Boxever.eventCreate(addEvent, function(data){},"json");
+    Boxever.eventCreate(addEvent, function (data) { }, "json");
+    console.log("event called");
 });
 }
 
