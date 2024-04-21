@@ -17,3 +17,20 @@
       var x = document.getElementsByTagName('script')[0];
       x.parentNode.insertBefore(s, x);
     })();
+
+_boxeverq.push(function() {
+    // Create a "VIEW" event object
+    var viewEvent = {
+        browser_id: Boxever.getID(),
+        channel: "WEB",
+        type: "VIEW",
+        language: "EN",
+        currency: "USD",
+        page: "homepage",
+        pos: "SpinBurger"
+
+    };
+
+    // Send the event data to the server
+    Boxever.eventCreate(viewEvent, function(data){},"json");
+});
