@@ -7,7 +7,7 @@
       target: 'https://api-us.boxever.com/v1.2', // Replace with your API target endpoint specific to your data center region
       cookie_domain: '.sitecore-cdp-personalize.vercel.app', // Replace with the top level cookie domain of the website that is being integrated e.g ".example.com" and not "www.example.com"
       web_flow_target: 'https://d35vb5cccm4xzp.cloudfront.net',
-        pos: 'SpinBurger'
+        pointOfSale: 'SpinBurger'
     };
     // Import the Boxever library asynchronously
     (function () {
