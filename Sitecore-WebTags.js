@@ -136,7 +136,7 @@ function ShowDiscountBanner() {
                 channel: "WEB",
                 language: "EN",
                 currencyCode: "USD",
-                pos "SpinBurger",
+                pos: "SpinBurger",
                 browserId: Boxever.getID(),
                 clientKey: "sndbxus06p9cxhoqoiowkr1sbq5casz3",
                 friendlyId: "comptenece_test_5"
