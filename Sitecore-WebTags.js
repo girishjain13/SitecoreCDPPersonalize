@@ -130,5 +130,54 @@ function sentCheckoutEvent() {
   
 }
 
+function ShowDiscountBanner() {
+            // TODO
+            var callFlowsContext = {
+                channel: "WEB",
+                language: "EN",
+                currencyCode: "USD",
+                pos "SpinBurger",
+                browserId: Boxever.getID(),
+                clientKey: "sndbxus06p9cxhoqoiowkr1sbq5casz3",
+                friendlyId: "comptenece_test_5"
+            };
+
+            var customPtpValue = $("#customptp").val();
+            console.log("customPtpValue :" + customPtpValue);
+            if (customPtpValue != null) {
+                callFlowsContext = {
+                    channel: "WEB",
+                    language: "EN",
+                    currencyCode: "USD",
+                    pointOfSale: "SpinBurger",
+                    browserId: Boxever.getID(),
+                    clientKey: "sndbxus06p9cxhoqoiowkr1sbq5casz3",
+                    friendlyId: "comptenece_test_5",
+                    params: {
+                        customptp: customPtpValue
+                    }
+                };
+            }
+      
+        //Boxever.callFlows(callFlowsContext, function (response) {
+        //    console.log(response);
+        //});
+
+            Boxever.callFlows(callFlowsContext, function (response) {
+                console.log("****response*****");
+                console.log(response);
+
+                if (response != null) {
+                    var discountBannerObj = document.getElementById("discountbanner");
+                    var stringToRender = "<div>";
+                    stringToRender += "<div> <img scr='" + response.decisionOffers[0].attributes.imageUrl + "'/>";
+                    stringToRender += response.decisionOffers[0].attributes.name + "</div>";
+                    stringToRender += "</div>";
+                    discountBannerObj.innerHTML = stringToRender;
+                    discountBannerObj.style.display = "block";
+                }
+
+            }, 'json');
+    }
 
     
