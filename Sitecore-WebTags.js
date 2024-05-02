@@ -142,7 +142,7 @@ function ShowDiscountBanner() {
                 friendlyId: "comptenece_test_5"
             };
 
-            var customPtpValue = $("#customptp").val();
+            var customPtpValue = $("#propensityToPurchase").val();
             console.log("customPtpValue :" + customPtpValue);
             if (customPtpValue != null) {
                 callFlowsContext = {
