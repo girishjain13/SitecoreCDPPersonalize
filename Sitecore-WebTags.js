@@ -1,13 +1,17 @@
 
- var _boxeverq = _boxeverq || [];
-
+var _boxeverq = _boxeverq || [];
+ 
     // Define the Boxever settings
     var _boxever_settings = {
       client_key: 'sndbxus06p9cxhoqoiowkr1sbq5casz3', // Replace with your client key
       target: 'https://api-us.boxever.com/v1.2', // Replace with your API target endpoint specific to your data center region
       cookie_domain: '.sitecore-cdp-personalize.vercel.app', // Replace with the top level cookie domain of the website that is being integrated e.g ".example.com" and not "www.example.com"
       web_flow_target: 'https://d35vb5cccm4xzp.cloudfront.net',
-        pointOfSale: 'SpinBurger'
+      pointOfSale: 'SpinBurger',
+      cookieExpiryDays: 365,
+        forceServerCookieMode: false,
+        includeUTMParameters: true,
+        webPersonalization: true
     };
     // Import the Boxever library asynchronously
     (function () {
@@ -130,54 +134,19 @@ function sentCheckoutEvent() {
   
 }
 
-function ShowDiscountBanner() {
-            // TODO
-            var callFlowsContext = {
-                channel: "WEB",
-                language: "EN",
-                currencyCode: "USD",
-                pos: "SpinBurger",
-                browserId: Boxever.getID(),
-                clientKey: "sndbxus06p9cxhoqoiowkr1sbq5casz3",
-                friendlyId: "comptenece_test_5"
-            };
-
-            var customPtpValue = $("#propensityToPurchase").val();
-            console.log("customPtpValue :" + customPtpValue);
-            if (customPtpValue != null) {
-                callFlowsContext = {
-                    channel: "WEB",
-                    language: "EN",
-                    currencyCode: "USD",
-                    pointOfSale: "SpinBurger",
-                    browserId: Boxever.getID(),
-                    clientKey: "sndbxus06p9cxhoqoiowkr1sbq5casz3",
-                    friendlyId: "comptenece_test_5",
-                    params: {
-                        customptp: customPtpValue
-                    }
-                };
-            }
-      
-        //Boxever.callFlows(callFlowsContext, function (response) {
-        //    console.log(response);
-        //});
-
-            Boxever.callFlows(callFlowsContext, function (response) {
-                console.log("****response*****");
-                console.log(response);
-
-                if (response != null) {
-                    var discountBannerObj = document.getElementById("discountbanner");
-                    var stringToRender = "<div>";
-                    stringToRender += "<div> <img scr='" + response.decisionOffers[0].attributes.imageUrl + "'/>";
-                    stringToRender += response.decisionOffers[0].attributes.name + "</div>";
-                    stringToRender += "</div>";
-                    discountBannerObj.innerHTML = stringToRender;
-                    discountBannerObj.style.display = "block";
-                }
-
-            }, 'json');
+function callExperience() {
+  var flowObject = {
+    clientKey: Boxever.getClientKey(),
+    friendlyId: "comptenece_test_5",
+    channel: "WEB",
+    language: "EN",
+    currencyCode: "EUR",
+    pointOfSale: "SpinBurger",
+    // guest identifier:
+    browserId: Boxever.getID()
+};
+Boxever.callFlows(flowObject,
+    response => console.log(response))
     }
 
     
