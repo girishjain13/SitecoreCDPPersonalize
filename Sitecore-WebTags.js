@@ -136,7 +136,7 @@ function callExperience() {
   _boxeverq.push(function () {
     var flowObject = {
       clientKey: "sndbxus06p9cxhoqoiowkr1sbq5casz3",
-      friendlyId: "comptenece_test_5",
+      friendlyId: "duplicate__comptenece_test_5",
       channel: "WEB",
       language: "EN",
       currencyCode: "EUR",
