@@ -132,6 +132,7 @@ function sentCheckoutEvent() {
 }
 
 function callExperience() {
+  alert("1");
   _boxeverq.push(function () {
     var flowObject = {
       clientKey: "sndbxus06p9cxhoqoiowkr1sbq5casz3",
@@ -144,7 +145,9 @@ function callExperience() {
       email: "girishjain13@gmail.com",
       //browserId: Boxever.getID()
     };
+    alert("2");
     //Boxever.callFlows(flowObject, (response) => alert(response));
     Boxever.callFlows(flowObject, function (data) {}, "json");
+    alert("3");
   });
 }
