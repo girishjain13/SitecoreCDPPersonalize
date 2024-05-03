@@ -136,17 +136,18 @@ function sentCheckoutEvent() {
 
 function callExperience() {
   var flowObject = {
-    clientKey: Boxever.getClientKey(),
+    clientKey: 'sndbxus06p9cxhoqoiowkr1sbq5casz3',
     friendlyId: "comptenece_test_5",
     channel: "WEB",
     language: "EN",
     currencyCode: "EUR",
     pointOfSale: "SpinBurger",
     // guest identifier:
-    browserId: Boxever.getID()
+    email: "girishjain13@gmail.com"
+    //browserId: Boxever.getID()
 };
 Boxever.callFlows(flowObject,
-    response => console.log(response))
+    response => alert(response))
     }
 
     
