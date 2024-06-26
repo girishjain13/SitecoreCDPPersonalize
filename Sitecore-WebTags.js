@@ -6,7 +6,7 @@ var _boxever_settings = {
   target: "https://api-us.boxever.com/v1.2", // Replace with your API target endpoint specific to your data center region
   cookie_domain: ".sitecore-cdp-personalize.vercel.app", // Replace with the top level cookie domain of the website that is being integrated e.g ".example.com" and not "www.example.com"
   web_flow_target: "https://d35vb5cccm4xzp.cloudfront.net",
-  pointOfSale: "SpinBurger",
+  pointOfSale: "DevanshiK1_POS",
   cookieExpiryDays: 365,
   forceServerCookieMode: false,
   includeUTMParameters: true,
@@ -31,7 +31,7 @@ _boxeverq.push(function () {
     language: "EN",
     currency: "USD",
     page: "homepage",
-    pos: "SpinBurger",
+    pos: "DevanshiK1_POS",
   };
 
   // Send the event data to the server
@@ -48,7 +48,7 @@ function login(email) {
       language: "EN",
       currency: "USD",
       page: "homepage",
-      pos: "SpinBurger",
+      pos: "DevanshiK1_POS",
       email: email,
       identifiers: [
         {
@@ -79,7 +79,7 @@ function sendAddEvent(
       language: "EN",
       currency: "USD",
       page: "homepage",
-      pos: "SpinBurger",
+      pos: "DevanshiK1_POS",
       product: {
         type: productType,
         item_id: itemID,
@@ -123,7 +123,7 @@ function sentCheckoutEvent() {
       language: "EN",
       currency: "USD",
       page: "checkout",
-      pos: "SpinBurger",
+      pos: "DevanshiK1_POS",
       refernce_id: "ORDER_111",
       status: "PURCHASED",
     };
@@ -136,11 +136,11 @@ function callExperience() {
   _boxeverq.push(function () {
     var flowObject = {
       clientKey: "sndbxus06p9cxhoqoiowkr1sbq5casz3",
-      friendlyId: "duplicate__comptenece_test_5",
+      friendlyId: "dkprompt",
       channel: "WEB",
       language: "EN",
       currencyCode: "EUR",
-      pointOfSale: "SpinBurger",
+      pointOfSale: "DevanshiK1_POS",
       // guest identifier:
       email: "girishjain13@gmail.com",
       //browserId: Boxever.getID()
